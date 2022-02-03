@@ -1,0 +1,52 @@
+
+.father{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxAll {
+    cursor: pointer;
+    width: 98px;
+    height: 31px;
+    padding: 3px 39px 0 40px;
+    border-radius: 2px;
+    border: solid 1px #1797ff;
+}
+.boxMyFaves {
+    cursor: pointer;
+    width: 98px;
+    height: 31px;
+    padding: 3px 39px 0 40px;
+    border-radius: 2px;
+    border: solid 1px #d6d6d6;
+    
+}
+
+.All {
+    width: 19px;
+    height: 28px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: center;
+    padding-left: 40px;
+    color: #1797ff;
+  }
+  .MyFaves {
+    width: 19px;
+    height: 28px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: center;
+    padding-left: 15px;
+    color: #606060;
+  }

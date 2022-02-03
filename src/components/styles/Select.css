@@ -1,0 +1,17 @@
+.Select {
+    width: 240px;
+    height: 32px;
+    margin: 63px 114px 1px 60px;
+    padding: 5px 12px 5px 12px;
+    border-radius: 4px;
+    border: solid 1px #2e2e2e;
+    background-color: #fff;
+}
+.Option {
+    padding-top: 100px;
+}
+.Img {
+    width: 24px;
+    height: 24px;
+    margin: 1px 13px 62px 0;
+}
