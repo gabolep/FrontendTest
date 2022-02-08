@@ -5,7 +5,9 @@ class Header extends Component{
     render(){
         return(
             <header className='Header'>
-                <img className='HACKER-NEWS' src='./title/hacker-news.png' ></img>
+                <div className='ContainerImg'>
+                    <img className='HACKER-NEWS' src='./title/hacker-news.png' ></img>
+                </div>
             </header>
         )
         

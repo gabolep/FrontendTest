@@ -78,9 +78,9 @@ class News extends Component{
             }
         }else{
             let favNews = localStorage.getItem('favNews');
-            if(favNews === ''){
+            if(favNews === '' || favNews === '[]'){
                 return(
-                    null
+                    <div className='message'>you don't have favorite news yet</div>
                 )
             }else{
                 const jsonNews = JSON.parse(favNews);

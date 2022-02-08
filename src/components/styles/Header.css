@@ -10,10 +10,20 @@
   justify-content: space-between;
   position: relative;
 }
+.ContainerImg{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    width: 80%;
+    margin: 0 auto;
+    height: 100px;
+    margin-bottom: 20px;
+    flex-direction: 'row';
+}
 .HACKER-NEWS {
     width: 208px;
-    padding: 44px 1082px 42px 150px;    
     height: 28px;
+    margin-top: 43px;
     object-fit: contain;
     font-family: Baskerville;
     font-size: 28px;

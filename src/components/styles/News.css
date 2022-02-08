@@ -6,6 +6,19 @@
     margin: 0 auto 0 auto;
     text-align: center;
 }
+.message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    padding-top: 20px;
+}
 
 @media (max-width:800px){
     .gridLayout{
