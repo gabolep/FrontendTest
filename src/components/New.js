@@ -97,8 +97,9 @@ class New extends Component{
             }
         }
         if(!URL || !title){
+            const bool = false;
             return(
-                null
+                bool
             )
         }else{
             return(

@@ -14,7 +14,6 @@ import Pages from './components/Pages';
 
 
 
-//FIXME: ERASE APP 
 
 class App extends Component {
   componentDidMount(){
@@ -30,15 +29,11 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        
           <Header/>
           <Buttons/>
           <Select/>
           <News/>
-          <Pages></Pages>
-
-              
-              
+          <Pages></Pages>     
       </div>
     );
   }

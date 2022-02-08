@@ -76,13 +76,11 @@ class Select extends Component{
             )
         }else{
             return(
-                null
+                <div></div>
             )
         }
         
     }
-        
-
 }
 
 export default Select;

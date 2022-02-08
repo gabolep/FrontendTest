@@ -33,7 +33,7 @@ class Pages extends Component{
             )
         }else{
             return(
-                null
+                <div></div>
             )
         }
     }

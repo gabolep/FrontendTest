@@ -63,7 +63,7 @@ class News extends Component{
             }
             if(angular === 'false' && react === 'false' && vuejs === 'false' ){
                 return(
-                    null
+                    <div></div>
                 )
             }else{
                 return(

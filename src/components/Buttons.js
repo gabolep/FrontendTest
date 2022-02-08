@@ -67,12 +67,8 @@ class Buttons extends Component{
                     </div>
                 </div>
             )
-            
         }
-        
     }
-        
-
 }
 
 export default Buttons;

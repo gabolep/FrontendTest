@@ -19,7 +19,9 @@
   .box:hover {
     opacity: 0.5;
   }
-  
+  .boxHidden{
+    visibility: hidden;
+  }
   .title {
     margin: 7px 0 14px 25px
   }

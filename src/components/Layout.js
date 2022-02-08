@@ -16,9 +16,6 @@ const styles = {
         width: '1200px',
     }
 }
-
-
-
 class Layout extends Component {
     render() {
         return(
