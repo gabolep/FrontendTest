@@ -4,20 +4,7 @@ import './styles/New.css'
 class New extends Component{
 
     addToFavs = (e,n) =>{
-        //changing css
         const imagen = e.target;
-        
-        //creating the new
-        let URL = n.url;
-        if(URL == null){
-            URL = n.story_url;
-        }
-        let title;
-        if(n.title !== null){
-            title = n.title;
-        }else{
-            title = n.story_title;
-        }
         const newsItem = {
             url: n.url,
             story_url: n.story_url,
@@ -35,7 +22,19 @@ class New extends Component{
             }else{
                 const jsonNews = JSON.parse(favNews);
                 jsonNews.push(newsItem);
+                
                 localStorage.setItem('favNews',JSON.stringify( jsonNews ));
+            }
+        }else  if(imagen.src === 'http://localhost:3000/Fav.png'){
+            let favNews = localStorage.getItem('favNews');
+            if(favNews === ''){
+            }else{
+                const jsonNews = JSON.parse(favNews);
+                console.log(jsonNews);
+                const findNew = jsonNews.filter(e => e.objectID !== n.objectID);
+                console.log(findNew);
+                localStorage.setItem('favNews',JSON.stringify( findNew ));
+                console.log(localStorage.getItem('favNews'));
             }
         }
         if(imagen.src === 'http://localhost:3000/noFav.png'){
@@ -51,8 +50,29 @@ class New extends Component{
         }
         window.open(URL, '_blank');
     }
-    render(){
+    render(){      
         const  {n}  = this.props
+        let now = new Date();
+        const dateServer = new Date(n.created_at);
+        let diff = Math.abs(now - dateServer) / 36e5;
+        let dateString;
+        const author = n.author;
+        if(diff < 1){
+            dateString = 'now by ' + author;     
+        }else if(diff < 24){
+            const floorDiff =  Math.floor(diff);
+            const diffString = floorDiff.toString()
+            dateString = diffString + ' hours ago by ' + author;      
+        }
+        else if(diff > 24 && diff<48){
+            dateString = 'yesterday by '  + author;
+        }else{
+            diff = Math.abs(now - dateServer) / (1000*3600*24);
+            const floorDiff =  Math.floor(diff);
+            const diffStringInDays = floorDiff.toString()
+            dateString = diffStringInDays + ' days ago by ' + author;
+        }
+
         let title;
         if(n.title !== null){
             title = n.title;
@@ -69,7 +89,6 @@ class New extends Component{
             src = './noFav.png';
         }else{
             const jsonNews = JSON.parse(favNews);
-            let id = n.objectID;
             const findNew = jsonNews.filter(e => e.objectID === n.objectID);
             if(findNew.length === 1){
                 src = './Fav.png';
@@ -88,7 +107,7 @@ class New extends Component{
                     <div className='time' onClick={() => this.openNew(n)}> 
                         <img className='imgTime' alt='hearth' src='./time.png'></img>
                         <span className="spanTime">
-                            3 hours ago by {n.author}
+                            {dateString}
                         </span>
                     </div>
                     <div className='title' onClick={() => this.openNew(n)}>
