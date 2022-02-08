@@ -25,8 +25,7 @@ class Select extends Component{
         const delay = ms => new Promise(res => setTimeout(res, ms));
         const Select = document.querySelector('.textSelect');
         Select.textContent = text;
-        const react = ' React';
-        //TODO: BUG 
+        
         if(text === 'React' || text === ' React'){
             console.log('entre en if react');
             localStorage.setItem('react','true');

@@ -3,10 +3,8 @@ import { Component } from 'react';
 
 import './App.css';
 import Header from './components/Header';
-import Layout from './components/Layout';
 import Buttons from './components/Buttons';
 import Select from './components/Select';
-import New from './components/New';
 import News from './components/News';
 import Pages from './components/Pages';
 
