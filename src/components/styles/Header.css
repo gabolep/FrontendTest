@@ -7,6 +7,8 @@
   display: 'flex';
   flex-direction: 'row';
   align-items: 'center';
+  justify-content: space-between;
+  position: relative;
 }
 .HACKER-NEWS {
     width: 208px;

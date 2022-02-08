@@ -5,3 +5,13 @@
   padding: 0 0 98px;
   background-color: #fcfcfc;
 }
+.gridLayout{
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 40px;
+  /*background-color: aqua;*/
+  width: 80%;
+  margin: 0 auto 0 auto;
+  text-align: center;
+
+}

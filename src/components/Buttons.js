@@ -3,6 +3,12 @@ import './styles/Buttons.css'
 
 
 class Buttons extends Component{
+    componentDidMount(){
+        let type = localStorage.getItem('type');
+        if(!type){
+            type = localStorage.setItem('type','all');
+        }
+    }
     viewAll = () =>{
         //changing css
         const MyFaves = document.querySelector('.MyFaves');
@@ -26,23 +32,44 @@ class Buttons extends Component{
         boxAll.style.borderColor = '#d6d6d6';
         All.style.color = '#606060';
     }
-
+    changeType = () =>{
+        const box = document.querySelector('.boxUnselected');
+        console.log(box.textContent);
+        if(box.textContent === 'My faves'){
+            console.log('entre');
+            localStorage.setItem('type','favs')
+        }else{
+            localStorage.setItem('type','all')
+        }
+        window.location.reload(true);
+    }
     render(){
-        return(
-            <div className='father'>
-                 <div className='boxAll' onClick={() => this.viewAll()}>
-                    <span className="All">
+        let type = localStorage.getItem('type');
+        if(type === 'all'){
+            return(
+                <div className='father'>
+                     <div className='boxSelected'>
                         All
-                    </span>
+                    </div>
+                    <div className='boxUnselected' onClick = {() => this.changeType()} >
+                       My faves    
+                    </div>
                 </div>
-                <div className='boxMyFaves' onClick = {() => this.viewFaves()} >
-                    <span className="MyFaves">
-                       My faves
-                    </span>
+            )
+        }else if(type === 'favs'){
+            return(
+                <div className='father'>
+                     <div className='boxUnselected' onClick = {() => this.changeType()}>
+                        All
+                    </div>
+                    <div className='boxSelected'>
+                       My faves    
+                    </div>
                 </div>
-            </div>
-           
-        )
+            )
+            
+        }
+        
     }
         
 

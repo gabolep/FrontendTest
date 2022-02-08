@@ -1,0 +1,39 @@
+.card {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    margin: 0 4px 20px 4px;
+    border-radius: 6px;
+    border: solid 1px #d9d9d9;
+    background-color: #fff;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 32px;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.65);
+}
+.card:hover {
+    opacity: 0.5;
+  }
+.cardSelected {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    margin: 0 4px 20px 4px;
+    border-radius: 6px;
+    border: solid 1px #d9d9d9;
+    background-color: #1890ff;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 32px;
+    letter-spacing: normal;
+    color: #fff;
+}

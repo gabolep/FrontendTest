@@ -4,5 +4,6 @@
     flex-direction: 'column';
 }
 .container {
-    width: '90%';
+    margin: 0 auto;
+    width: '50%';
 }
