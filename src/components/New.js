@@ -5,6 +5,10 @@ class New extends Component{
 
     addToFavs = (e,n) =>{
         const imagen = e.target;
+        const host = window.location.host
+        const url = 'http://' + host;
+        const urlnoFav = url + '/noFav.png';
+        const urlFav = url + '/Fav.png';
         const newsItem = {
             url: n.url,
             story_url: n.story_url,
@@ -14,7 +18,7 @@ class New extends Component{
             author: n.author,
             objectID: n.objectID
         };
-        if(imagen.src === 'http://localhost:3000/noFav.png'){
+        if(imagen.src === urlnoFav){
             const favNewsArray = [newsItem];
             let favNews = localStorage.getItem('favNews');
             if(favNews === ''){
@@ -25,22 +29,19 @@ class New extends Component{
                 
                 localStorage.setItem('favNews',JSON.stringify( jsonNews ));
             }
-        }else  if(imagen.src === 'http://localhost:3000/Fav.png'){
+        }else  if(imagen.src === urlFav){
             let favNews = localStorage.getItem('favNews');
             if(favNews === ''){
             }else{
                 const jsonNews = JSON.parse(favNews);
-                console.log(jsonNews);
                 const findNew = jsonNews.filter(e => e.objectID !== n.objectID);
-                console.log(findNew);
                 localStorage.setItem('favNews',JSON.stringify( findNew ));
-                console.log(localStorage.getItem('favNews'));
             }
         }
-        if(imagen.src === 'http://localhost:3000/noFav.png'){
-            imagen.src = 'http://localhost:3000/Fav.png'
+        if(imagen.src === urlnoFav){
+            imagen.src = urlFav
         }else{
-            imagen.src = 'http://localhost:3000/noFav.png'
+            imagen.src = urlnoFav
         }
     }
     openNew = (n) =>{
